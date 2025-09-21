@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flatdango</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">▦</span>
+      <span class="brand-name">FLATDANGO</span>
+    </div>
+    <div class="tagline">BUY MOVIE TICKETS</div>
+  </header>
+
+  <div class="container">
+    <aside class="left">
+      <h3 class="left-placeholder">MOVIE TITLES WILL GO HERE.</h3>
+      <ul id="films" aria-label="Movie list"></ul>
+    </aside>
+
+    <section class="center poster-section">
+      <div class="poster-frame">
+        <img id="poster" src="https://via.placeholder.com/320x480?text=REPLACE+ME" alt="Movie poster" />
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="title-strip">
+        <h2 id="title">[MOVIE TITLE]</h2>
+        <div class="runtime" id="runtime">[RUNTIME] minutes</div>
+      </div>
+
+      <div class="info-card">
+        <p id="description">[INSERT MOVIE DESCRIPTION HERE]</p>
+
+        <div class="meta">
+          <div><strong>Showtime:</strong> <span id="showtime">[SHOWTIME]</span></div>
+          <div class="tickets"><span id="available-tickets">[X]</span> remaining tickets</div>
+        </div>
+
+        <button id="buy-ticket">Buy Ticket</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

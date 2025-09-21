@@ -1,0 +1,169 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(#f2f3f4, #e9eaeb);
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.topbar {
+  background: #1f1f1f;
+  color: #fff;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+.brand { display:flex; align-items:center; gap:12px; }
+.logo {
+  background:#ff7a44;
+  color:#fff;
+  width:34px; height:34px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:4px; font-weight:bold;
+}
+.brand-name { color:#69b1ff; font-weight:700; letter-spacing:0.5px; }
+.tagline { color:#ddd; font-size:0.85rem; letter-spacing:0.6px; }
+
+.container {
+  display: grid;
+  grid-template-columns: 320px 1fr 360px; 
+  gap: 28px;
+  padding: 30px;
+  height: calc(100vh - 64px);
+  align-items: start;
+}
+
+.left {
+  background: transparent;
+  color: #666;
+  padding-top: 24px;
+}
+.left-placeholder {
+  text-transform: uppercase;
+  color: #bdbfc2;
+  font-size: 0.95rem;
+  text-align: left;
+  padding: 10px 8px;
+  margin-bottom: 20px;
+}
+#films {
+  list-style: none;
+  padding: 0 8px;
+}
+#films li {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: transparent;
+  color: #444;
+  padding: 8px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background .18s;
+}
+#films li:hover { background: rgba(0,0,0,0.03); }
+
+#films li button {
+  background: transparent;
+  border: none;
+  color: #c44;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.poster-section {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  padding-top: 20px;
+}
+.poster-frame {
+  background: #fff;
+  border-radius: 4px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  border: 1px solid rgba(0,0,0,0.06);
+  width: 360px;           
+  display: flex;
+  justify-content: center;
+}
+.poster-frame img {
+  display:block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.right {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title-strip {
+  background: #222;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.title-strip h2 {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
+}
+.title-strip .runtime {
+  color: #7ec8ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.info-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.info-card p { color:#444; margin-bottom:12px; line-height:1.45; font-size:0.95rem; }
+
+.meta {
+  display:flex;
+  flex-direction: column;
+  gap:8px;
+  margin-bottom: 14px;
+  color:#666;
+  font-size:0.95rem;
+}
+.meta .tickets { font-weight:700; color:#444; }
+
+#buy-ticket {
+  background: #ff7a44;
+  border: none;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(255,122,68,0.15);
+}
+#buy-ticket:disabled { background:#bdbdbd; cursor:not-allowed; box-shadow:none; }
+
+#films li.sold-out { color: #c44; text-decoration: line-through; }
+
+@media (max-width: 980px) {
+  .container { grid-template-columns: 220px 1fr; grid-auto-rows: auto; }
+  .right { display:none; }
+}
